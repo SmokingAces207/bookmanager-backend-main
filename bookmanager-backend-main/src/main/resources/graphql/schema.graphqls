@@ -1,0 +1,23 @@
+type Query {
+    findAllBooks: [Book!]!
+    findBookById(id: Int): Book
+    findBooksByDateRange(startDate: String!, endDate: String!): [Book!]!
+}
+
+type Mutation {
+    createBook(book: BookInput!): Book!
+    deleteBook(id: Int): String
+}
+
+type Book {
+    id: Int
+    title: String
+    author: String
+    publishedDate: String
+}
+
+input BookInput {
+  title: String!
+  author: String!
+  publishedDate: String!
+}
